@@ -9,8 +9,28 @@ for menor que 2, retorne uma string vazia.
 
 def both_ends(s):
     # +++ SUA SOLUÇÃO 1 +++
-    return s[:2]+s[-2:] if len(s) >= 2 else ''
+    # Pythonic way
+    # return s[:2]+s[-2:] if len(s) >= 2 else ''
 
+    # +++ SUA SOLUÇÃO 2 +++
+    # Old School way
+    i = 0
+    new_s = ''
+    total_size = len(s)
+    last_item = total_size - 1
+    penultimate_item = last_item -1
+
+    if total_size == 2:
+        new_s = s*2
+    elif total_size == 3:
+        new_s = s[0]+s[1]+s[1]+s[2]
+    else:
+        while i < total_size:
+            if i in (0, 1, penultimate_item, last_item):
+                new_s += s[i]
+            i += 1
+
+    return new_s if total_size >= 2 else ''
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
@@ -38,3 +58,5 @@ if __name__ == '__main__':
     test(both_ends, 'a', '')
     test(both_ends, 'xyz', 'xyyz')
     test(both_ends, 'xy', 'xyxy')
+    test(both_ends, 'xyyyyyyyy', 'xyyy')
+    test(both_ends, 'laion', 'laon')
