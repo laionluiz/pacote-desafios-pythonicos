@@ -34,7 +34,7 @@ def fix_start(s):
     # return new_s
 
     # +++ SUA SOLUÇÃO 3 +++
-    # Ternary variant - Getting Better, thinkin in ternary wa
+    # Ternary variant - Getting Better
     c = s[0]
     i = 1
     new_s = '' + c
