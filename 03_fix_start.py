@@ -14,8 +14,9 @@ onde todas as instancias de stra foram substituidas por strb.
 """
 
 def fix_start(s):
-    # +++ SUA SOLUÇÃO +++
-    return
+    # +++ SUA SOLUÇÃO 1 +++
+    # The pythonic way
+    return s[0] + s[1:].replace(s[0], '*')
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
@@ -43,3 +44,5 @@ if __name__ == '__main__':
     test(fix_start, 'aardvark', 'a*rdv*rk')
     test(fix_start, 'google', 'goo*le')
     test(fix_start, 'donut', 'donut')
+    test(fix_start, 'donut_is_awesome', 'donut_is_awesome')
+    test(fix_start, 'omonoponohono', 'om*n*p*n*h*n*')
