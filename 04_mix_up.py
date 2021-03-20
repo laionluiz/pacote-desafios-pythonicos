@@ -15,12 +15,14 @@ Assuma que a e b tem tamanho 2 ou maior.
 def mix_up(a, b):
     # +++ SUA SOLUÇÃO 1 +++
     # Default solution - Using strings
-    new_a = b[:2]+a[2:]
-    new_b = a[:2]+b[2:]
+    # new_a = b[:2]+a[2:]
+    # new_b = a[:2]+b[2:]
+    #
+    # return ' '.join([new_a,new_b])
 
-    return ' '.join([new_a,new_b])
-
-
+    # +++ SUA SOLUÇÃO 2 +++
+    # The pythonist way
+    return ' '.join([b[:2]+a[2:], a[:2]+b[2:]])
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
