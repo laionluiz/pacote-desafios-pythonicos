@@ -16,7 +16,22 @@ onde todas as instancias de stra foram substituidas por strb.
 def fix_start(s):
     # +++ SUA SOLUÇÃO 1 +++
     # The pythonic way
-    return s[0] + s[1:].replace(s[0], '*')
+    # return s[0] + s[1:].replace(s[0], '*')
+
+    # +++ SUA SOLUÇÃO 2 +++
+    # The Old School way
+    c = s[0]
+    i = 1
+    new_s = '' + c
+
+    while i < len(s):
+        if s[i] == c:
+            new_s += '*'
+        else:
+            new_s += s[i]
+        i += 1
+
+    return new_s
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
