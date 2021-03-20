@@ -12,12 +12,17 @@ Retorne o resultado da string.
 
 def verbing(s):
     # +++ SUA SOLUÇÃO 1 +++
-    # Basic Pythonist
-    new_s = ''
-    new_s += s
-    new_s += ('ly' if new_s[-3:] == 'ing' else 'ing')
-    return new_s if len(s) > 3 else s
+    # Basic Pythonist I
+    # new_s = ''
+    # new_s += s
+    # new_s += ('ly' if new_s[-3:] == 'ing' else 'ing')
+    # return new_s if len(s) > 3 else s
 
+    # +++ SUA SOLUÇÃO 2 +++
+    # Basic Pythonist II
+    cp_s = s
+    s += ('ly' if s[-3:] == 'ing' else 'ing')
+    return s if len(cp_s) > 3 else cp_s
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
