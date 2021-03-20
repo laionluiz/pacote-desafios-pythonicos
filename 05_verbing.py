@@ -20,9 +20,9 @@ def verbing(s):
 
     # +++ SUA SOLUÇÃO 2 +++
     # Basic Pythonist II
-    cp_s = s
-    s += ('ly' if s[-3:] == 'ing' else 'ing')
-    return s if len(cp_s) > 3 else cp_s
+    # cp_s = s
+    # s += ('ly' if s[-3:] == 'ing' else 'ing')
+    # return s if len(cp_s) > 3 else cp_s
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
