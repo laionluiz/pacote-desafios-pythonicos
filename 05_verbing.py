@@ -11,8 +11,12 @@ Retorne o resultado da string.
 """
 
 def verbing(s):
-    # +++ SUA SOLUÇÃO +++
-    return
+    # +++ SUA SOLUÇÃO 1 +++
+    # Basic Pythonist
+    new_s = ''
+    new_s += s
+    new_s += ('ly' if new_s[-3:] == 'ing' else 'ing')
+    return new_s if len(s) > 3 else s
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
@@ -39,3 +43,6 @@ if __name__ == '__main__':
     test(verbing, 'hail', 'hailing')
     test(verbing, 'swiming', 'swimingly')
     test(verbing, 'do', 'do')
+    test(verbing, 'a', 'a')
+    test(verbing, 'Laion', 'Laioning')
+    test(verbing, 'Laioning', 'Laioningly')
