@@ -20,15 +20,27 @@ def fix_start(s):
 
     # +++ SUA SOLUÇÃO 2 +++
     # The Old School way
+    # c = s[0]
+    # i = 1
+    # new_s = '' + c
+    #
+    # while i < len(s):
+    #     if s[i] == c:
+    #         new_s += '*'
+    #     else:
+    #         new_s += s[i]
+    #     i += 1
+    #
+    # return new_s
+
+    # +++ SUA SOLUÇÃO 3 +++
+    # Ternary variant - Getting Better, thinkin in ternary wa
     c = s[0]
     i = 1
     new_s = '' + c
 
     while i < len(s):
-        if s[i] == c:
-            new_s += '*'
-        else:
-            new_s += s[i]
+        new_s += ('*' if s[i] == c else s[i])
         i += 1
 
     return new_s
