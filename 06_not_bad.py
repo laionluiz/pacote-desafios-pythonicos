@@ -11,7 +11,13 @@ Exemplo: 'The dinner is not that bad!' retorna 'The dinner is good!'
 
 def not_bad(s):
     # +++ SUA SOLUÇÃO +++
-    return
+    # Basic Pythonist I
+    new_s = ''
+    if (s.find('bad') > s.find('not')):
+        new_s = s[:(s.find('not'))] + 'good' + s[(s.find('bad')+3):]
+    else:
+        new_s = s
+    return new_s
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
@@ -39,3 +45,4 @@ if __name__ == '__main__':
     test(not_bad, 'This dinner is not that bad!', 'This dinner is good!')
     test(not_bad, 'This tea is not hot', 'This tea is not hot')
     test(not_bad, "It's bad yet not", "It's bad yet not")
+    test(not_bad, 'This dinner is not that bad!!!', 'This dinner is good!!!')
