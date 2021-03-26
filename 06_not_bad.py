@@ -12,11 +12,15 @@ Exemplo: 'The dinner is not that bad!' retorna 'The dinner is good!'
 def not_bad(s):
     # +++ SUA SOLUÇÃO +++
     # Basic Pythonist I
-    new_s = ''
-    if (s.find('bad') > s.find('not')):
-        new_s = s[:(s.find('not'))] + 'good' + s[(s.find('bad')+3):]
-    else:
-        new_s = s
+    # new_s = ''
+    # if (s.find('bad') > s.find('not')):
+    #     new_s = s[:(s.find('not'))] + 'good' + s[(s.find('bad')+3):]
+    # else:
+    #     new_s = s
+
+    # +++ SUA SOLUÇÃO +++
+    # Basic Pythonist II
+    new_s = s[:(s.find('not'))] + 'good' + s[(s.find('bad')+3):] if (s.find('bad') > s.find('not')) else s
     return new_s
 
 
