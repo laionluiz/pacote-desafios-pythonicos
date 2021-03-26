@@ -10,7 +10,7 @@ Exemplo: 'The dinner is not that bad!' retorna 'The dinner is good!'
 """
 
 def not_bad(s):
-    # +++ SUA SOLUÇÃO +++
+    # +++ SUA SOLUÇÃO 1 +++
     # Basic Pythonist I
     # new_s = ''
     # if (s.find('bad') > s.find('not')):
@@ -18,11 +18,14 @@ def not_bad(s):
     # else:
     #     new_s = s
 
-    # +++ SUA SOLUÇÃO +++
+    # +++ SUA SOLUÇÃO 2 +++
     # Basic Pythonist II
-    new_s = s[:(s.find('not'))] + 'good' + s[(s.find('bad')+3):] if (s.find('bad') > s.find('not')) else s
-    return new_s
+    # new_s = s[:(s.find('not'))] + 'good' + s[(s.find('bad')+3):] if (s.find('bad') > s.find('not')) else s
+    # return new_s
 
+    # +++ SUA SOLUÇÃO 3 +++
+    # Pythonist way
+    return s[:(s.find('not'))] + 'good' + s[(s.find('bad')+3):] if (s.find('bad') > s.find('not')) else s
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
