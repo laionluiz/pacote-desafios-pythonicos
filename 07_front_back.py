@@ -13,12 +13,25 @@ a-frente + b-frente + a-trás + b-trás
 def front_back(a, b):
     # +++ SUA SOLUÇÃO 1 +++
     # Basic Pythonist
-    a_frente, b_frente = a[:(len(a)//2)+1 if len(a)%2!=0 else ((len(a)//2))], \
-                         b[:(len(b)//2)+1 if len(b)%2!=0 else ((len(b)//2))]
-    a_tras, b_tras = a[(len(a)//2)+1 if len(a)%2!=0 else ((len(a)//2)):], \
-                     b[(len(b)//2)+1 if len(b)%2!=0 else ((len(b)//2)):]
-    return a_frente + b_frente + a_tras + b_tras
+    # a_frente, b_frente = a[:(len(a)//2)+1 if len(a)%2!=0 else ((len(a)//2))], \
+    #                      b[:(len(b)//2)+1 if len(b)%2!=0 else ((len(b)//2))]
+    # a_tras, b_tras = a[(len(a)//2)+1 if len(a)%2!=0 else ((len(a)//2)):], \
+    #                  b[(len(b)//2)+1 if len(b)%2!=0 else ((len(b)//2)):]
+    # return a_frente + b_frente + a_tras + b_tras
 
+    # +++ SUA SOLUÇÃO 2 +++
+    # Pythonist cleaned and documented
+    pos_char_odd_a = (len(a)//2)+1
+    pos_char_odd_b = (len(b)//2)+1
+    pos_char_even_a = (len(a)//2)
+    pos_char_even_b = (len(b)//2)
+    is_len_a_odd = len(a)%2!=0
+    is_len_b_odd = len(b)%2!=0
+    a_frente, b_frente = a[:pos_char_odd_a if is_len_a_odd else pos_char_even_a], \
+                         b[:pos_char_odd_b if is_len_b_odd else pos_char_even_b]
+    a_tras, b_tras = a[pos_char_odd_a if is_len_a_odd else pos_char_even_a:], \
+                     b[pos_char_odd_b if is_len_b_odd else pos_char_even_b:]
+    return a_frente + b_frente + a_tras + b_tras
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
