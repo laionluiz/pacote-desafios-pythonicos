@@ -25,7 +25,13 @@ def not_bad(s):
 
     # +++ SUA SOLUÇÃO 3 +++
     # Pythonist way
-    return s[:(s.find('not'))] + 'good' + s[(s.find('bad')+3):] if (s.find('bad') > s.find('not')) else s
+    # return s[:(s.find('not'))] + 'good' + s[(s.find('bad')+3):] if (s.find('bad') > s.find('not')) else s
+
+    # +++ SUA SOLUÇÃO 4 +++
+    # Pythonist way - Cleaning up the things
+    find_not = s.find('not')
+    find_bad = s.find('bad')
+    return s[:find_not] + 'good' + s[(find_bad+3):] if (find_bad > find_not) else s
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
