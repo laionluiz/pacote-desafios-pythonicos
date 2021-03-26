@@ -12,8 +12,31 @@ antes de combina-las.
 """
 
 def front_x(words):
-    # +++ SUA SOLUÇÃO +++
-    return
+    # # +++ SUA SOLUÇÃO 1 +++
+    # # Classic
+    # list_with_x = []
+    # list_without_x = []
+    # for w in words:
+    #     if w[0] == 'x':
+    #         list_with_x.append(w)
+    #     else:
+    #         list_without_x.append(w)
+    # list_with_x.sort()
+    # list_without_x.sort()
+    # result_list = list_with_x + list_without_x
+    # return result_list
+
+    # +++ SUA SOLUÇÃO 2 +++
+    # Pythonist
+    list_with_x, list_without_x = [], []
+    for w in words:
+        if w[0] == 'x':
+            list_with_x.append(w)
+        else:
+            list_without_x.append(w)
+    list_with_x.sort()
+    list_without_x.sort()
+    return list_with_x + list_without_x
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
