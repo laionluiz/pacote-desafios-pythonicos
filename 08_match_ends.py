@@ -11,14 +11,21 @@ PS: Python não possui o operador ++, porém += funciona.
 def match_ends(words):
     # +++ SUA SOLUÇÃO 1 +++
     #  Classic
-    count = 0
-    for w in words:
-        if w == '':
-            pass
-        elif (w[0] == w[-1] and len(w) >= 2):
-            count += 1
-    return count
+    # count = 0
+    # for w in words:
+    #     if w == '':
+    #         pass
+    #     elif (w[0] == w[-1] and len(w) >= 2):
+    #         count += 1
+    # return count
 
+    # +++ SUA SOLUÇÃO 2 +++
+    #  Pythonist Way, removing the empty strings
+    count = 0
+    words = list(filter(None, words))
+    for w in words:
+        count = (count+1) if (w[0] == w[-1] and len(w) >= 2) else count
+    return count
 
 
 
