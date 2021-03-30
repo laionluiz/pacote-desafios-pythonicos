@@ -1,3 +1,8 @@
 A a C
 c c B
 b b B
+a A A
+B b C
+C a B
+B A C
+D E F
