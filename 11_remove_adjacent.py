@@ -23,15 +23,21 @@ def remove_adjacent(nums):
 
     # +++ SUA SOLUÇÃO 2 +++
     # Classic way - II
+    # new_nums = []
+    # i = 0
+    # while i < len(nums):
+    #     if nums[i] not in new_nums or nums[i] != nums[i-1]:
+    #         new_nums.append(nums[i])
+    #     i += 1
+    # return new_nums
+
+    # +++ SUA SOLUÇÃO 3 +++
+    # Basic Pythonist
     new_nums = []
-    i = 0
-    while i < len(nums):
+    for i in range(len(nums)):
         if nums[i] not in new_nums or nums[i] != nums[i-1]:
             new_nums.append(nums[i])
-        i += 1
     return new_nums
-
-
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
