@@ -12,7 +12,15 @@ A sua solução deve rodar em tempo linear, ou seja, deve fazer uma
 def linear_merge(list1, list2):
     # +++ SUA SOLUÇÃO 1 +++
     # Hack Way
-    l = list1 + list2
+    # l = list1 + list2
+    # l.sort()
+    # return l
+
+    # +++ SUA SOLUÇÃO 2 +++
+    # Classic Way
+    l = []
+    for i, j in list(list1 + list2):
+        l.append(i + j)
     l.sort()
     return l
 
