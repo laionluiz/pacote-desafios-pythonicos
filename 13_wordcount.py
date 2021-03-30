@@ -74,19 +74,19 @@ def content(ordered_list):
     #List Comprehension
     return '\n'.join([f'{w} {qtd}' for w, qtd in ordered_list])
 
-
-def work_file(filename):
+def read_file(filename):
     #Read file
     f = open(filename, 'r')
     data = f.read()
     f.close()
+    return data
 
+
+def split_count_words(filename):
     #Split the file
-    words = data.lower().split()
-
+    words = read_file(filename).lower().split()
     #Count ocurrencies
     counter = collections.Counter(words)
-
     #return a dict like k/v
     return counter
 
@@ -112,12 +112,12 @@ def print_words(filename):
     print('a', cont_a, '\nb', cont_b, '\nc', cont_c)
     '''
     # Sol 2 - Pythonist - collections + sorted
-    ordered_list = sorted(work_file(filename).items())
+    ordered_list = sorted(split_count_words(filename).items())
     return ordered_list
 
 
 def print_top(filename):
-    ordered_list = sorted(work_file(filename), reverse=True, key=lambda t: t[-1])
+    ordered_list = sorted(split_count_words(filename), reverse=True, key=lambda t: t[-1])
     return ordered_list[:20]
 
 
