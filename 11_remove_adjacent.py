@@ -9,17 +9,29 @@ Irá retornar: [1, 2, 3]
 """
 
 def remove_adjacent(nums):
-    # +++ SUA SOLUÇÃO 1 +++
-    # Classic way
+    # # +++ SUA SOLUÇÃO 1 +++
+    # # Classic way
+    # new_nums = []
+    # i = 0
+    # while i < len(nums):
+    #     if nums[i] not in new_nums:
+    #         new_nums.append(nums[i])
+    #     elif nums[i] != nums[i-1]:
+    #         new_nums.append(nums[i])
+    #     i += 1
+    # return new_nums
+
+    # +++ SUA SOLUÇÃO 2 +++
+    # Classic way - II
     new_nums = []
     i = 0
     while i < len(nums):
-        if nums[i] not in new_nums:
-            new_nums.append(nums[i])
-        elif nums[i] != nums[i-1]:
+        if nums[i] not in new_nums or nums[i] != nums[i-1]:
             new_nums.append(nums[i])
         i += 1
     return new_nums
+
+
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
