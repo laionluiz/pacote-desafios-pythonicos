@@ -53,9 +53,29 @@ e conferindo cada etapa do seu progresso.
 
 import sys
 
+dict = {'a': 0, 'b': 0, 'c': 0}
 
 # +++ SUA SOLUÇÃO +++
 # Defina as funções print_words(filename) e print_top(filename).
+def print_words(filename):
+    # Sol 1 - Old fashion a,b,c only
+    f = open(filename, 'r')
+    data = f.read()
+    f.close()
+
+    words = data.split()
+    cont_a = 0
+    cont_b = 0
+    cont_c = 0
+    for w in words:
+        if w[0].lower() == 'a':
+            cont_a += 1
+        elif w[0].lower() == 'b':
+            cont_b += 1
+        elif w[0].lower() == 'c':
+            cont_c += 1
+
+    print('a', cont_a, '\nb', cont_b, '\nc', cont_c)
 
 
 # A função abaixo chama print_words() ou print_top() de acordo com os
