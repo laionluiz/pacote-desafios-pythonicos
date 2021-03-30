@@ -41,10 +41,20 @@ def remove_adjacent(nums):
 
     # +++ SUA SOLUÇÃO 4 +++
     # Basic Pythonist - Enumerate
+    # new_nums = []
+    # for i, n in enumerate(nums):
+    #     if nums[i] not in new_nums or nums[i] != nums[i-1]:
+    #         new_nums.append(nums[i])
+    # return new_nums
+
+    # +++ SUA SOLUÇÃO 5 +++
+    # Basic Pythonist - Last position
     new_nums = []
-    for i, n in enumerate(nums):
-        if nums[i] not in new_nums or nums[i] != nums[i-1]:
-            new_nums.append(nums[i])
+    last_pos = ''
+    for i in nums:
+        if i != last_pos:
+            new_nums.append(i)
+        last_pos = i
     return new_nums
 
 
