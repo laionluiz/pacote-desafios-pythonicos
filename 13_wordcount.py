@@ -65,11 +65,14 @@ def content(ordered_list):
     #     print(l, qtd)
 
     #solution without print
-    l = []
-    for w, qtd in ordered_list:
-        l.append(f'{w} {qtd}')
+    # l = []
+    # for w, qtd in ordered_list:
+    #     l.append(f'{w} {qtd}')
+    #
+    # return '\n'.join(l)
 
-    return '\n'.join(l)
+    #List Comprehension
+    return '\n'.join([f'{w} {qtd}' for w, qtd in ordered_list])
 
 
 def work_file(filename):
