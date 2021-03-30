@@ -10,6 +10,9 @@ Irá retornar: [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 Dica: Use uma custom key= function para extrair o ultimo elemento de cada tupla.
 """
 
+from operator import itemgetter, attrgetter
+
+#Commented from sol2
 # def last(a):
 #     return a[-1]
 
@@ -21,8 +24,11 @@ def sort_last(tuples):
 
     # +++ SUA SOLUÇÃO 2 +++
     # Pythonist way - Using Lambda
-    return sorted(tuples, key=lambda last: last[-1])
+    # return sorted(tuples, key=lambda last: last[-1])
 
+    # +++ SUA SOLUÇÃO 3 +++
+    # Pythonist way - Using Operators
+    return sorted(tuples, key=itemgetter(1))
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
