@@ -44,33 +44,17 @@ import sys
 from collections import defaultdict
 
 
+def read_file(filename):
+    with open(filename) as f:
+        data = f.read()
+    return data.split()
+
+
 def mimic_dict(filename):
     """Retorna o dicionario imitador mapeando cada palavra para a lista de
     palavras subsequentes."""
     # +++ SUA SOLUÇÃO +++
-    with open(filename) as f:
-        data = f.read()
-
-    l_content = data.split()
-
-    #Generate l_keys list
-    #Solution 1
-    # for k in l_content:
-    #     if k not in l_keys:
-    #         l_keys.append(k)
-
-    #Soluion 2
-    # l_keys = list(set(l_content))
-    # possible_words = []
-
-    #Generate lists of possible words
-    # Solution 1
-    # for key in l_keys:
-    #     l = []
-    #     for i, word in enumerate(l_content):
-    #         if word == key and i != len(l_content)-1:
-    #             l.append(l_content[i+1])
-    #     possible_words.append(l)
+    l_content = read_file(filename)
 
     #Solution 3
     dict_words = defaultdict(list)
@@ -79,17 +63,13 @@ def mimic_dict(filename):
     for key, word in zip(l_content, l_content[1:]):
         dict_words[key].append(word)
 
-    # leros = dict(zip(l_keys, possible_words))
-
-    # return leros
-
     return dict_words
+
 
 def print_mimic(mimic_dict, word):
     """Dado o dicionario imitador e a palavra inicial, imprime texto de 200 palavras."""
     # +++ SUA SOLUÇÃO +++
     l_dict = mimic_dict.get(word)
-    # print(f'Finding {word} in dict...')
     msg = []
 
     for i in range(0, 10):
