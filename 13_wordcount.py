@@ -55,30 +55,13 @@ import sys
 import collections
 from operator import itemgetter, attrgetter
 
-dict = {'a': 0, 'b': 0, 'c': 0}
-
 # +++ SUA SOLUÇÃO +++
 # Defina as funções print_words(filename) e print_top(filename).
 def content(ordered_list):
-    #Basic Loop with print
-    # for l, qtd in ordered_list:
-    #     print(l, qtd)
-
-    #solution without print
-    # l = []
-    # for w, qtd in ordered_list:
-    #     l.append(f'{w} {qtd}')
-    #
-    # return '\n'.join(l)
-
     #List Comprehension
     return '\n'.join([f'{w} {qtd}' for w, qtd in ordered_list])
 
 def read_file(filename):
-    #Read file
-    # f = open(filename, 'r')
-    # data = f.read()
-    # f.close()
     with open(filename) as f:
         data = f.read()
     return data
@@ -87,32 +70,14 @@ def read_file(filename):
 def split_count_words(filename):
     #Split the file
     words = read_file(filename).lower().split()
+
     #Count ocurrencies
     counter = collections.Counter(words)
+
     #return a dict like k/v
     return counter
 
 def print_words(filename):
-    # Sol 1 - Old fashion a,b,c only
-    '''
-    f = open(filename, 'r')
-    data = f.read()
-    f.close()
-
-    words = data.split()
-    cont_a = 0
-    cont_b = 0
-    cont_c = 0
-    for w in words:
-        if w[0].lower() == 'a':
-            cont_a += 1
-        elif w[0].lower() == 'b':
-            cont_b += 1
-        elif w[0].lower() == 'c':
-            cont_c += 1
-
-    print('a', cont_a, '\nb', cont_b, '\nc', cont_c)
-    '''
     # Sol 2 - Pythonist - collections + sorted
     ordered_list = sorted(split_count_words(filename).items())
     return ordered_list
