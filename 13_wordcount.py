@@ -76,9 +76,11 @@ def content(ordered_list):
 
 def read_file(filename):
     #Read file
-    f = open(filename, 'r')
-    data = f.read()
-    f.close()
+    # f = open(filename, 'r')
+    # data = f.read()
+    # f.close()
+    with open(filename) as f:
+        data = f.read()
     return data
 
 
